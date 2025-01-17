@@ -9,6 +9,17 @@ const PORT = process.env.PORT || 7000;
 // Déclaration du module app express
 const app = express();
 
+const path = require('path');
+
+// Servir les fichiers statiques du dossier build
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+// Rediriger toutes les autres requêtes vers le fichier index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
+
+
 // Je dit à App Express que j'utilise du JSON
 app.use(express.json());
 // 

@@ -5,13 +5,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "client": "cd client && npm start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "web-vitals": "^4.2.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
